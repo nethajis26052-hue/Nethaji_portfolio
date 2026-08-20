@@ -1,0 +1,1774 @@
+/* =========================================
+   NETHAJI DATA ANALYST PORTFOLIO
+   STYLE.CSS
+========================================= */
+
+
+/* =========================================
+   1. GLOBAL
+========================================= */
+
+:root {
+    --bg: #07090d;
+    --panel: rgba(18, 22, 30, 0.72);
+    --panel-light: rgba(255, 255, 255, 0.035);
+
+    --text: #f3f5f7;
+    --muted: #9299a6;
+
+    --line: rgba(255, 255, 255, 0.09);
+
+    --green: #8cff66;
+    --blue: #62d8ff;
+
+    --shadow:
+        0 25px 80px rgba(0, 0, 0, 0.35);
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: "Manrope", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+button {
+    font-family: inherit;
+}
+
+
+/* =========================================
+   2. BACKGROUND
+========================================= */
+
+.bg-grid {
+    position: fixed;
+    inset: 0;
+
+    z-index: -5;
+
+    opacity: 0.18;
+
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,0.07) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,0.07) 1px,
+            transparent 1px
+        );
+
+    background-size: 55px 55px;
+}
+
+
+.glow {
+    position: fixed;
+
+    width: 500px;
+    height: 500px;
+
+    border-radius: 50%;
+
+    filter: blur(110px);
+
+    opacity: 0.12;
+
+    z-index: -4;
+
+    pointer-events: none;
+}
+
+
+.glow-one {
+    background: var(--green);
+
+    top: -250px;
+    right: -150px;
+}
+
+
+.glow-two {
+    background: var(--blue);
+
+    bottom: -250px;
+    left: -200px;
+}
+
+
+/* =========================================
+   3. NAVBAR
+========================================= */
+
+.navbar {
+
+    height: 78px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 6%;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 100;
+
+    background:
+        rgba(7, 9, 13, 0.78);
+
+    backdrop-filter: blur(20px);
+
+    border-bottom:
+        1px solid var(--line);
+}
+
+
+/* LOGO */
+
+.logo {
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 25px;
+
+    font-weight: 500;
+
+    letter-spacing: -2px;
+}
+
+
+.logo span {
+    color: var(--green);
+}
+
+
+/* NAV LINKS */
+
+.navbar nav {
+
+    display: flex;
+
+    gap: 30px;
+}
+
+
+.navbar nav a {
+
+    font-size: 13px;
+
+    color: #aeb4bf;
+
+    transition: 0.25s ease;
+}
+
+
+.navbar nav a:hover {
+
+    color: var(--green);
+
+}
+
+
+/* NAV BUTTON */
+
+.nav-button {
+
+    padding: 11px 17px;
+
+    border: 1px solid var(--line);
+
+    border-radius: 8px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    transition: 0.25s ease;
+}
+
+
+.nav-button:hover {
+
+    border-color:
+        rgba(140, 255, 102, 0.4);
+
+    color: var(--green);
+
+}
+
+
+/* =========================================
+   4. COMMON SECTION
+========================================= */
+
+.section {
+
+    width: 100%;
+
+    max-width: 1450px;
+
+    margin: auto;
+
+    padding:
+        110px 7%;
+}
+
+
+.eyebrow {
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 11px;
+
+    font-weight: 500;
+
+    letter-spacing: 1.7px;
+
+    color: var(--muted);
+}
+
+
+.section-heading {
+
+    margin-bottom: 50px;
+}
+
+
+.section-heading h2 {
+
+    font-size:
+        clamp(38px, 5vw, 66px);
+
+    line-height: 1;
+
+    letter-spacing: -3px;
+
+    margin-top: 12px;
+}
+
+
+/* =========================================
+   5. HERO
+========================================= */
+
+.hero {
+
+    min-height:
+        calc(100vh - 78px);
+
+    display: grid;
+
+    grid-template-columns:
+        1.05fr 0.95fr;
+
+    align-items: center;
+
+    gap: 80px;
+}
+
+
+/* STATUS */
+
+.status {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    padding: 8px 11px;
+
+    border:
+        1px solid var(--line);
+
+    border-radius: 100px;
+
+    margin-bottom: 25px;
+
+    font-family:
+        "DM Mono", monospace;
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+
+    color: var(--muted);
+}
+
+
+.status span {
+
+    width: 6px;
+
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: var(--green);
+
+    box-shadow:
+        0 0 14px var(--green);
+
+    animation: pulse 1.8s infinite;
+}
+
+
+@keyframes pulse {
+
+    0% {
+        opacity: 0.4;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.4;
+    }
+
+}
+
+
+/* HERO TITLE */
+
+.hero h1 {
+
+    font-size:
+        clamp(58px, 7vw, 105px);
+
+    line-height: 0.94;
+
+    letter-spacing: -5px;
+
+    margin:
+        15px 0 28px;
+}
+
+
+.hero h1 em {
+
+    font-style: normal;
+
+    color: var(--green);
+}
+
+
+/* HERO DESCRIPTION */
+
+.hero-description {
+
+    max-width: 620px;
+
+    color: var(--muted);
+
+    font-size: 16px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   6. BUTTONS
+========================================= */
+
+.hero-buttons {
+
+    display: flex;
+
+    gap: 12px;
+
+    margin: 32px 0;
+}
+
+
+.primary-button,
+.secondary-button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding:
+        12px 18px;
+
+    border-radius: 8px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    transition:
+        0.25s ease;
+
+}
+
+
+.primary-button {
+
+    background: var(--green);
+
+    color: #071007;
+
+    border:
+        1px solid var(--green);
+
+    gap: 14px;
+}
+
+
+.primary-button:hover {
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 12px 35px
+        rgba(140, 255, 102, 0.18);
+}
+
+
+.secondary-button {
+
+    border:
+        1px solid var(--line);
+
+    color: var(--text);
+}
+
+
+.secondary-button:hover {
+
+    border-color:
+        rgba(140, 255, 102, 0.4);
+
+    color: var(--green);
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* =========================================
+   7. TOOLS
+========================================= */
+
+.tools {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 9px;
+}
+
+
+.tools span {
+
+    font-family:
+        "DM Mono", monospace;
+
+    font-size: 10px;
+
+    padding:
+        7px 10px;
+
+    border:
+        1px solid var(--line);
+
+    border-radius: 5px;
+
+    color: #b7bdc7;
+
+    background:
+        rgba(255,255,255,0.02);
+}
+
+
+/* =========================================
+   8. ANALYTICS CARD
+========================================= */
+
+.analytics-card {
+
+    padding: 24px;
+
+    border:
+        1px solid var(--line);
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(27,32,42,0.82),
+            rgba(12,15,21,0.72)
+        );
+
+    backdrop-filter:
+        blur(20px);
+
+    box-shadow:
+        var(--shadow);
+
+    transition:
+        0.4s ease;
+}
+
+
+.analytics-card:hover {
+
+    transform:
+        translateY(-5px);
+
+    border-color:
+        rgba(140,255,102,0.18);
+}
+
+
+/* HEADER */
+
+.analytics-header {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+}
+
+
+.analytics-header small {
+
+    font-family:
+        "DM Mono", monospace;
+
+    font-size: 9px;
+
+    color: var(--muted);
+
+    letter-spacing: 1.2px;
+}
+
+
+.analytics-header h3 {
+
+    font-size: 17px;
+
+    margin-top: 5px;
+}
+
+
+.live {
+
+    font-family:
+        "DM Mono", monospace;
+
+    font-size: 9px;
+
+    color: var(--green);
+}
+
+
+/* =========================================
+   9. KPI
+========================================= */
+
+.kpi-container {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 10px;
+
+    margin:
+        22px 0;
+}
+
+
+.kpi {
+
+    padding: 15px;
+
+    border:
+        1px solid var(--line);
+
+    border-radius: 10px;
+
+    background:
+        rgba(255,255,255,0.035);
+
+    transition:
+        0.3s ease;
+}
+
+
+.kpi:hover {
+
+    border-color:
+        rgba(140,255,102,0.3);
+
+    transform:
+        translateY(-3px);
+}
+
+
+.kpi strong {
+
+    display: block;
+
+    font-size: 28px;
+
+    letter-spacing: -1px;
+}
+
+
+.kpi small {
+
+    font-family:
+        "DM Mono", monospace;
+
+    font-size: 8px;
+
+    color: var(--muted);
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================
+   10. CHART
+========================================= */
+
+.chart-container {
+
+    padding: 18px;
+
+    border:
+        1px solid var(--line);
+
+    border-radius: 12px;
+
+    background:
+        rgba(0,0,0,0.12);
+}
+
+
+.chart-title {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    font-family:
+        "DM Mono", monospace;
+
+    font-size: 9px;
+
+    color: var(--muted);
+}
+
+
+.chart {
+
+    height: 190px;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    gap: 13px;
+
+    padding:
+        20px 5px 3px;
+}
+
+
+.bar {
+
+    flex: 1;
+
+    min-height: 20px;
+
+    position: relative;
+
+    border-radius:
+        5px 5px 2px 2px;
+
+    background:
+        linear-gradient(
+            to top,
+            var(--green),
+            rgba(140,255,102,0.12)
+        );
+
+    transition:
+        0.35s ease;
+}
+
+
+.bar:hover {
+
+    filter:
+        brightness(1.3);
+
+    transform:
+        scaleY(1.05);
+}
+
+
+.bar span {
+
+    position: absolute;
+
+    bottom: -22px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    font-family:
+        "DM Mono", monospace;
+
+    font-size: 8px;
+
+    color: var(--muted);
+}
+
+
+/* =========================================
+   11. INSIGHT
+========================================= */
+
+.insight {
+
+    display: flex;
+
+    gap: 13px;
+
+    margin-top: 15px;
+
+    padding: 14px;
+
+    border:
+        1px solid
+        rgba(140,255,102,0.16);
+
+    background:
+        rgba(140,255,102,0.035);
+
+    border-radius: 10px;
+}
+
+
+.insight-icon {
+
+    font-size: 20px;
+
+    color: var(--green);
+}
+
+
+.insight small {
+
+    font-family:
+        "DM Mono", monospace;
+
+    font-size: 9px;
+
+    color: var(--muted);
+}
+
+
+.insight p {
+
+    font-size: 12px;
+
+    color: #c3c8d0;
+
+    margin-top: 3px;
+}
+
+
+/* =========================================
+   12. ABOUT
+========================================= */
+
+.about-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 80px;
+}
+
+
+.big-text {
+
+    font-size:
+        clamp(28px, 3vw, 45px);
+
+    line-height: 1.1;
+
+    letter-spacing: -2px;
+}
+
+
+.big-text span {
+
+    color: var(--green);
+}
+
+
+.about-text {
+
+    color: var(--muted);
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+
+.about-text p + p {
+
+    margin-top: 20px;
+}
+
+
+.about-text b {
+
+    color: var(--text);
+}
+
+
+/* =========================================
+   13. DATA FLOW
+========================================= */
+
+.data-flow {
+
+    margin-top: 60px;
+
+    padding: 25px;
+
+    border:
+        1px solid var(--line);
+
+    border-radius: 12px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 15px;
+
+    font-family:
+        "DM Mono", monospace;
+
+    font-size: 10px;
+
+    color: #bdc3cc;
+}
+
+
+.data-flow b {
+
+    color: var(--green);
+
+    font-size: 16px;
+}
+
+
+/* =========================================
+   14. SKILLS
+========================================= */
+
+.skills-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 12px;
+}
+
+
+.skill-card {
+
+    padding: 23px;
+
+    border:
+        1px solid var(--line);
+
+    border-radius: 14px;
+
+    background:
+        var(--panel);
+
+    transition:
+        0.3s ease;
+}
+
+
+.skill-card:hover {
+
+    transform:
+        translateY(-6px);
+
+    border-color:
+        rgba(140,255,102,0.3);
+}
+
+
+.skill-card > span {
+
+    font-family:
+        "DM Mono", monospace;
+
+    font-size: 10px;
+
+    color: var(--green);
+}
+
+
+.skill-card h3 {
+
+    font-size: 27px;
+
+    margin:
+        35px 0 7px;
+}
+
+
+.skill-card p {
+
+    color: var(--muted);
+
+    font-size: 12px;
+
+    min-height: 60px;
+}
+
+
+.progress {
+
+    height: 3px;
+
+    margin:
+        22px 0 10px;
+
+    background:
+        #252a32;
+}
+
+
+.progress div {
+
+    height: 100%;
+
+    background:
+        var(--green);
+
+    position: relative;
+}
+
+
+.progress div::after {
+
+    content: "";
+
+    position: absolute;
+
+    right: 0;
+
+    top: -2px;
+
+    width: 7px;
+
+    height: 7px;
+
+    border-radius: 50%;
+
+    background:
+        var(--green);
+
+    box-shadow:
+        0 0 12px var(--green);
+}
+
+
+.skill-card small {
+
+    font-family:
+        "DM Mono", monospace;
+
+    font-size: 8px;
+
+    color: var(--muted);
+}
+
+
+/* =========================================
+   15. PROJECT FILTERS
+========================================= */
+
+.filters {
+
+    display: flex;
+
+    gap: 8px;
+
+    margin-bottom: 22px;
+}
+
+
+.filter {
+
+    padding:
+        9px 12px;
+
+    background: transparent;
+
+    color: var(--muted);
+
+    border:
+        1px solid var(--line);
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    font-family:
+        "DM Mono", monospace;
+
+    font-size: 9px;
+
+    transition:
+        0.25s ease;
+}
+
+
+.filter:hover,
+.filter.active {
+
+    color: var(--green);
+
+    border-color:
+        rgba(140,255,102,0.35);
+
+    background:
+        rgba(140,255,102,0.04);
+}
+
+
+/* =========================================
+   16. PROJECTS
+========================================= */
+
+.projects-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 14px;
+}
+
+
+.project-card {
+
+    min-height: 420px;
+
+    padding: 23px;
+
+    border:
+        1px solid var(--line);
+
+    border-radius: 14px;
+
+    background:
+        var(--panel);
+
+    transition:
+        0.35s ease;
+}
+
+
+.project-card:hover {
+
+    transform:
+        translateY(-7px);
+
+    border-color:
+        rgba(140,255,102,0.3);
+
+    box-shadow:
+        0 20px 50px
+        rgba(0,0,0,0.25);
+}
+
+
+.project-card.hidden {
+
+    display: none;
+}
+
+
+.project-number {
+
+    font-family:
+        "DM Mono", monospace;
+
+    font-size: 10px;
+
+    color: var(--green);
+}
+
+
+.project-card > small {
+
+    display: block;
+
+    margin-top: 20px;
+
+    font-family:
+        "DM Mono", monospace;
+
+    font-size: 9px;
+
+    color: var(--muted);
+}
+
+
+.project-card h3 {
+
+    font-size: 23px;
+
+    line-height: 1.15;
+
+    margin:
+        8px 0 12px;
+}
+
+
+.project-card > p {
+
+    color: var(--muted);
+
+    font-size: 12px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   17. MINI BAR CHART
+========================================= */
+
+.mini-chart {
+
+    height: 130px;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    gap: 10px;
+
+    padding:
+        10px;
+
+    margin-top: 10px;
+
+    border-bottom:
+        1px solid var(--line);
+}
+
+
+.mini-chart span {
+
+    flex: 1;
+
+    border-radius:
+        4px 4px 0 0;
+
+    background:
+        linear-gradient(
+            to top,
+            var(--green),
+            rgba(140,255,102,0.1)
+        );
+
+    transition:
+        0.3s ease;
+}
+
+
+.mini-chart span:hover {
+
+    filter:
+        brightness(1.3);
+}
+
+
+/* =========================================
+   18. DONUT
+========================================= */
+
+.donut {
+
+    height: 130px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-bottom:
+        1px solid var(--line);
+}
+
+
+.donut div {
+
+    width: 92px;
+
+    height: 92px;
+
+    border-radius: 50%;
+
+    background:
+        conic-gradient(
+            var(--green) 0 64%,
+            #222832 64% 100%
+        );
+
+    position: relative;
+}
+
+
+.donut div::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 20px;
+
+    border-radius: 50%;
+
+    background:
+        #12161e;
+}
+
+
+/* =========================================
+   19. SQL VISUAL
+========================================= */
+
+.sql-box {
+
+    height: 130px;
+
+    padding: 18px;
+
+    border-bottom:
+        1px solid var(--line);
+
+    font-family:
+        "DM Mono", monospace;
+
+    font-size: 11px;
+
+    line-height: 2;
+
+    color: #aeb5c0;
+}
+
+
+.sql-box span {
+
+    color: var(--green);
+}
+
+
+/* =========================================
+   20. TAGS
+========================================= */
+
+.tags {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 6px;
+
+    margin-top: 22px;
+}
+
+
+.tags span {
+
+    padding:
+        6px 8px;
+
+    border:
+        1px solid var(--line);
+
+    border-radius: 5px;
+
+    font-family:
+        "DM Mono", monospace;
+
+    font-size: 8px;
+
+    color: #b7bdc7;
+}
+
+
+/* =========================================
+   21. TIMELINE
+========================================= */
+
+.timeline {
+
+    border-left:
+        1px solid var(--line);
+
+    margin-left: 10px;
+}
+
+
+.timeline-item {
+
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns:
+        80px 1fr;
+
+    gap: 30px;
+
+    padding:
+        0 0 55px 30px;
+}
+
+
+.timeline-item > span {
+
+    position: absolute;
+
+    left: -13px;
+
+    width: 25px;
+
+    height: 25px;
+
+    display: grid;
+
+    place-items: center;
+
+    border:
+        1px solid var(--green);
+
+    border-radius: 50%;
+
+    background:
+        var(--bg);
+
+    color: var(--green);
+
+    font-family:
+        "DM Mono", monospace;
+
+    font-size: 9px;
+}
+
+
+.timeline-item small {
+
+    font-family:
+        "DM Mono", monospace;
+
+    font-size: 9px;
+
+    color: var(--green);
+}
+
+
+.timeline-item h3 {
+
+    font-size: 27px;
+
+    margin:
+        4px 0;
+}
+
+
+.timeline-item p {
+
+    color: var(--muted);
+
+    font-size: 13px;
+}
+
+
+/* =========================================
+   22. CONTACT
+========================================= */
+
+.contact {
+
+    text-align: center;
+
+    padding-bottom: 120px;
+}
+
+
+.contact h2 {
+
+    font-size:
+        clamp(50px, 8vw, 110px);
+
+    line-height: 0.92;
+
+    letter-spacing: -5px;
+
+    margin:
+        20px 0;
+}
+
+
+.contact h2 em {
+
+    font-style: normal;
+
+    color: var(--green);
+}
+
+
+.contact > p:not(.eyebrow) {
+
+    max-width: 520px;
+
+    margin: auto;
+
+    color: var(--muted);
+}
+
+
+.contact-buttons {
+
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-top: 30px;
+}
+
+
+/* =========================================
+   23. FOOTER
+========================================= */
+
+footer {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    padding:
+        25px 7%;
+
+    border-top:
+        1px solid var(--line);
+
+    color: #666d78;
+
+    font-family:
+        "DM Mono", monospace;
+
+    font-size: 9px;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================
+   24. RESPONSIVE — TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .navbar nav {
+        display: none;
+    }
+
+
+    .hero {
+
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+
+    }
+
+
+    .skills-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .projects-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .about-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+
+    }
+
+
+    .section {
+
+        padding:
+            85px 6%;
+
+    }
+
+}
+
+
+/* =========================================
+   25. RESPONSIVE — MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .navbar {
+
+        padding:
+            0 5%;
+
+    }
+
+
+    .nav-button {
+
+        display: none;
+
+    }
+
+
+    .hero {
+
+        padding-top:
+            70px;
+
+    }
+
+
+    .hero h1 {
+
+        font-size: 58px;
+
+        letter-spacing:
+            -3px;
+
+    }
+
+
+    .hero-description {
+
+        font-size: 14px;
+
+    }
+
+
+    .hero-buttons {
+
+        flex-wrap: wrap;
+
+    }
+
+
+    .analytics-card {
+
+        padding: 18px;
+
+    }
+
+
+    .kpi-container {
+
+        grid-template-columns:
+            repeat(3, 1fr);
+
+    }
+
+
+    .kpi strong {
+
+        font-size: 22px;
+
+    }
+
+
+    .skills-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .projects-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .data-flow {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+    }
+
+
+    .data-flow b {
+
+        transform:
+            rotate(90deg);
+
+    }
+
+
+    .contact h2 {
+
+        font-size: 56px;
+
+        letter-spacing:
+            -3px;
+
+    }
+
+
+    footer {
+
+        flex-direction: column;
+
+        gap: 10px;
+
+    }
+
+}
+
+
+/* =========================================
+   26. SELECTION
+========================================= */
+
+::selection {
+
+    background:
+        var(--green);
+
+    color:
+        #071007;
+
+}
+
+
+/* =========================================
+   27. SCROLLBAR
+========================================= */
+
+::-webkit-scrollbar {
+
+    width: 7px;
+
+}
+
+
+::-webkit-scrollbar-track {
+
+    background:
+        var(--bg);
+
+}
+
+
+::-webkit-scrollbar-thumb {
+
+    background:
+        #303640;
+
+    border-radius: 10px;
+
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+
+    background:
+        var(--green);
+
+}
