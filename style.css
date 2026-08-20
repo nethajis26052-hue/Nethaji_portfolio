@@ -1865,3 +1865,76 @@ footer {
 
 
 }
+
+/* =========================================
+   PROJECT DETAILS
+========================================= */
+
+.project-detail {
+
+    margin-top: 25px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid var(--line);
+
+}
+
+
+.detail-label {
+
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: var(--green);
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 9px;
+
+    letter-spacing: 1.5px;
+
+}
+
+
+.project-detail p {
+
+    margin: 0;
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+}
+
+
+.project-detail ul {
+
+    margin: 0;
+
+    padding-left: 18px;
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+    line-height: 1.9;
+
+}
+
+
+.project-detail li::marker {
+
+    color: var(--green);
+
+}
+
+
+.project-detail .tags {
+
+    margin-top: 5px;
+
+}
